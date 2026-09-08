@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Brittany Signature";
+  src: url("/fonts/brittany-signature/BrittanySignature.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  /* Colors */
+  --color-cream: #FDF6F0;
+  --color-ivory: #F5EFE3;
+  --color-parchment: #E8DDC8;
+  --color-earth: #6B5140;
+  --color-charcoal: #30332F;
+  --color-gold: #B49A67;
+  --color-petroleum: #164A52;
+
+  /* Fonts */
+  --font-script: "Brittany Signature", cursive;
+  --font-title: "Cormorant Garamond", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-small-caps: "Cormorant SC", serif;
+}

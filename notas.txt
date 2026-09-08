@@ -1,0 +1,22 @@
+Tipografías
+1. Principal / nombres:
+Brittany Signature — estilo manuscrito elegante.
+Alternativa gratuita: Great Vibes
+Uso: “Majo y Tobi”, “Te esperamos”, títulos románticos.
+2. Títulos secundarios:
+Cormorant Garamond — elegante, clásica y muy Toscana.
+Uso: “Cuenta regresiva”, “Detalles del gran día”, “Nosotros”.
+3. Texto general:
+Montserrat — limpia y moderna, para que la página sea fácil de leer.
+Alternativa más sofisticada: Lato.
+4. Fechas / pequeños textos:
+Cormorant SC o Montserrat Light, con bastante espaciado entre letras.
+
+💙 Combinación que usaría en la web
+#e9e9e9
+#164A52 — Azul petróleo → botones, bloques destacados y detalles importantes
+#F5EFE3 — Marfil → fondo principal
+#E8DDC8 — Pergamino → secciones alternadas
+#6B5140 — Marrón tierra → textos secundarios y detalles
+#B49A67 — Dorado viejo → líneas, pequeños íconos y ornamentos
+#30332F — Carbón → texto principal

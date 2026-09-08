@@ -1,0 +1,18 @@
+---
+import AttendanceForm from "./AttendanceForm.tsx";
+---
+
+<section id="confirmar" class="grid place-items-center py-32">
+    <div class="flex flex-col gap-y-12">
+        <div>
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FFFFFF] border border-[#E8E2D8] ring-1 ring-[#656D4A]/15 flex items-center justify-center mx-auto shadow-[0_4px_20px_rgba(42,34,30,0.03)]" style="opacity: 1; transform: none;"><div class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center" style="transform: none;"><svg class="w-8 h-8 sm:w-10 sm:h-10 text-[#2A221E] stroke-[1.3]" viewBox="0 0 32 32" fill="none" stroke="currentColor"><rect x="5" y="8" width="22" height="16" rx="2" stroke-linecap="round" stroke-linejoin="round"></rect><path stroke-linecap="round" stroke-linejoin="round" d="M5 9l11 8.5L27 9"></path><path stroke-linecap="round" stroke-linejoin="round" d="M5 23l8-6.5M27 23l-8-6.5"></path></svg></div></div>
+        </div>
+            <div class="flex flex-col items-center">
+                <p class="font-body tracking-[0.2rem] text-petroleum text-sm text-center">TU PRESENCIA ES NUESTRO MEJOR REGALO</p>
+                <h2 class="font-title text-5xl text-charcoal text-center">Confirmación de asistencia</h2>
+            </div>
+        <div class="grid place-items-center">
+            <AttendanceForm client:load />
+        </div>
+    </div>
+</section>

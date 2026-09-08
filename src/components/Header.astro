@@ -1,0 +1,36 @@
+---
+import Menu from "./icons/Menu.astro";
+import { MusicButton } from "./MusicButton.tsx";
+---
+
+<header class="absolute top-0 left-0 w-full flex justify-between items-center gap-6 py-6 px-10 z-10">
+    <div>
+        <a class="font-title text-petroleum text-3xl" href="/">M & T</a>
+    </div>
+    <div>
+        <nav class="hidden lg:block">
+            <ul class="flex items-center gap-x-6 font-small-caps font-semibold text-petroleum">
+                <li><a href="#inicio" class="lg:hover:underline hover:text-underline-offset-6 transition">INICIO</a></li>
+                <li><a href="#cuenta-regresiva" class="lg:hover:underline hover:text-underline-offset-6 transition">CUENTA REGRESIVA</a></li>
+                <li><a href="#confirmar" class="lg:hover:underline hover:text-underline-offset-6 transition">CONFIRMAR</a></li>
+                <li><a href="#lugar" class="lg:hover:underline hover:text-underline-offset-6 transition">LUGAR</a></li>
+                <li><a href="#regalos" class="lg:hover:underline hover:text-underline-offset-6 transition">REGALOS</a></li>
+                <li><a href="#dress-code" class="lg:hover:underline hover:text-underline-offset-6 transition">DRESS CODE</a></li>
+                <li><a href="#playlist" class="lg:hover:underline hover:text-underline-offset-6 transition">PLAYLIST</a></li>
+                <li><a href="#fotos" class="lg:hover:underline hover:text-underline-offset-6 transition">FOTOS</a></li>
+                <li><a href="#recuerdos" class="lg:hover:underline hover:text-underline-offset-6 transition">RECUERDOS</a></li>                
+            </ul>
+        </nav>
+    </div>
+    <div class="flex items-center gap-x-4">
+        <!-- <button class="bg-cream shadow-xl rounded-full px-6 py-4 font-body text-sm text-charcoal flex items-center gap-2 hover:bg-parchment/80 cursor-pointer transition">
+            <Music />
+            Musica On
+            <SoundOn />
+        </button> -->
+        <MusicButton client:load />
+        <button class="lg:hidden bg-parchment shadow-xl rounded-lx p-4 hover:bg-parchment/80 cursor-pointer transition">
+            <Menu />
+        </button>
+    </div>
+</header>

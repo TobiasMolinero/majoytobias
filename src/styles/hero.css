@@ -1,0 +1,22 @@
+/* #inicio {
+    background-image: url('/images/hero-bg.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
+.arrow {
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
