@@ -15,7 +15,7 @@ export default function AttendanceForm() {
   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiwEOHzcIkHsrvuaVGuNso3aFge0rrk7LlL3d7sm65pCDaxwe1__HCG7T0WwfzYfoC/exec";
 
   const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>
+    event: React.SubmitEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
 
@@ -25,8 +25,11 @@ export default function AttendanceForm() {
 
     setIsSubmitting(true);
 
+    const form = event.currentTarget;
+    const nameInput = form.elements.namedItem("name") as HTMLInputElement;
+
     const data = {
-      name: event.currentTarget.name.value,
+      name: nameInput.value,
       attendance,
       guests: attendance === "yes" ? guests : "0",
       food,
@@ -44,6 +47,11 @@ export default function AttendanceForm() {
       });
 
       setModal("success");
+      nameInput.value = "";
+      setAttendance(null);
+      setGuests("1");
+      setFood("Ninguno");
+      setComments("");
     } catch (error) {
       console.error(error);
       setModal("error")
