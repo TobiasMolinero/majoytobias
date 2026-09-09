@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { Header, Hero, TimeRemaining, Separator, Form } from "../components/index.ts";
+import { WeddingApp } from "../components/WeddingApp.tsx";
 ---
 
 <!doctype html>
@@ -17,41 +17,7 @@ import { Header, Hero, TimeRemaining, Separator, Form } from "../components/inde
 		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant+SC:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 	</head>
 	<body class="bg-ivory">
-		<Header />
-		<main>
-			<Hero />
-			<TimeRemaining />
-			<Separator />
-			<Form />
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-			<div>.</div>
-		</main>
+		<WeddingApp client:load />
+		<slot />
 	</body>
-	</html>
-	
-	<div>.</div>
+</html>

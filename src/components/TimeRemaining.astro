@@ -1,37 +1,19 @@
 ---
+import { Countdown } from "./Countdown";
 import SandClock from "./icons/SandClock.astro"
 ---
 
 <section id="cuenta-regresiva" class="grid place-items-center py-32">
     <div class="flex flex-col gap-y-12">
-        <!-- <div>
+        <div>
             <SandClock />
-        </div> -->
+        </div>
         <div class="flex flex-col items-center">
             <p class="font-body tracking-[0.2rem] text-petroleum text-sm">FALTA CADA VEZ MENOS</p>
             <h2 class="font-title text-5xl text-charcoal text-center">Cuenta Regresiva</h2>
         </div>
         <div class="flex justify-between gap-x-8 lg:gap-x-24">
-            <div class="flex flex-col justify-center items-center gap-y-4">
-                <span class="font-small-caps text-charcoal text-4xl lg:text-6xl">18</span>
-                <span class="font-body text-petroleum text-xs tracking-[0.2rem]">DÍAS</span>
-            </div>
-            <div class="flex flex-col justify-center items-center gap-y-4">
-                <span class="font-small-caps text-charcoal text-4xl lg:text-6xl">09</span>
-                <span class="font-body text-petroleum text-xs tracking-[0.2rem]">HORAS</span>
-            </div>
-            <div class="flex flex-col justify-center items-center gap-y-4">
-                <span class="font-small-caps text-charcoal text-4xl lg:text-6xl">30</span>
-                <span class="font-body text-petroleum text-xs tracking-[0.2rem]">MINUTOS</span>
-            </div>
-            <div class="flex flex-col justify-center items-center gap-y-4">
-                <span class="font-small-caps text-charcoal text-4xl lg:text-6xl">45</span>
-                <span class="font-body text-petroleum text-xs tracking-[0.2rem]">SEGUNDOS</span>
-            </div>
+            <Countdown client:load />
         </div>
-        <!-- <div class="flex flex-col justify-center items-center gap-y-2">
-            <p class="font-body text-charcoal">Viernes 27 de Noviembre de 2026</p>
-            <p class="font-body tracking-[0.2rem] text-petroleum text-sm">YERBA BUENA - TUCUMÁN</p>
-        </div> -->
     </div>
 </section>

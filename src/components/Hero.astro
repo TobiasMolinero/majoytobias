@@ -3,20 +3,24 @@
 import "../styles/hero.css";
 ---
 
-<section id="inicio" class="relative h-screen flex flex-col justify-center items-center">
-    <div class="flex flex-col items-center gap-y-12">
-        <h1 class="font-script text-petroleum text-5xl lg:text-7xl">Majo y Tobias</h1>
+<section id="inicio" class="hero-background relative h-screen flex flex-col justify-center items-center">
+    <div class="flex flex-col items-center gap-y-12 z-10">
+        <h1 class="font-script text-cream text-5xl lg:text-7xl">Majo y Tobias</h1>
         <div class="flex items-center gap-x-4">
-            <div class="h-[0.5px] w-8 sm:w-12 bg-petroleum/60"></div>
-            <h2 class="font-title text-petroleum text-3xl"><i>Nos casamos</i></h2>
-            <div class="h-[0.5px] w-8 sm:w-12 bg-petroleum/60"></div>
+            <div class="h-[0.5px] w-8 sm:w-12 bg-earth/60"></div>
+            <h2 class="font-title text-parchment text-3xl"><i>Nos casamos</i></h2>
+            <div class="h-[0.5px] w-8 sm:w-12 bg-earth/60"></div>
         </div>
         <div class="flex flex-col justify-center items-center gap-y-2">
-            <p class="font-body text-charcoal">Viernes 27 de Noviembre de 2026</p>
-            <p class="font-body tracking-[0.2rem] text-petroleum text-sm">YERBA BUENA - TUCUMÁN</p>
+            <p class="font-body text-parchment">Viernes 27 de Noviembre de 2026</p>
+            <p class="font-body tracking-[0.2rem] text-parchment text-sm">YERBA BUENA - TUCUMÁN</p>
         </div>
     </div>
     
+    <div class="background-overlay absolute top-0 left-0 w-full h-full bg-black/40"></div>
+    <!-- <div class="background absolute top-0 left-0 w-full h-full grid place-items-center z-[-1]">
+        <div class="background-image w-full h-[70%]"></div>
+    </div> -->
     <!-- <div class="absolute bottom-12 flex flex-col items-center gap-y-4">
         <a href="#cuenta-regresiva" class="font-body text-petroleum text-sm font-bold tracking-[0.2rem]">DESLIZÁ PARA DESCUBRIR</a>
         <div class="arrow grid place-items-center">

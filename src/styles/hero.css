@@ -1,11 +1,11 @@
-/* #inicio {
+.hero-background {
     background-image: url('/images/hero-bg.jpeg');
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
-} */
+    background-attachment: fixed;
+}
 
-.arrow {
+/* .arrow {
     animation: float 2s ease-in-out infinite;
 }
 
@@ -19,4 +19,4 @@
     100% {
         transform: translateY(0);
     }
-}
+} */

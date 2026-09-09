@@ -7,9 +7,23 @@ export default function AttendanceForm() {
   const [guests, setGuests] = useState("1");
   const [food, setFood] = useState("Ninguno");
   const [comments, setComments] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [isSubmitted, setIsSubmitted] = useState(false);
+  // const [error, setError] = useState<string | null>(null);
+  const [modal, setModal] = useState<"success" | "error" | null>(null);
 
-  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiwEOHzcIkHsrvuaVGuNso3aFge0rrk7LlL3d7sm65pCDaxwe1__HCG7T0WwfzYfoC/exec";
+
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
+
+    if (!attendance) {
+      return;
+    }
+
+    setIsSubmitting(true);
 
     const data = {
       name: event.currentTarget.name.value,
@@ -19,9 +33,23 @@ export default function AttendanceForm() {
       comments,
     };
 
-    console.log(data);
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify(data),
+      });
 
-    // Más adelante podemos enviar `data` a Google Sheets.
+      setModal("success");
+    } catch (error) {
+      console.error(error);
+      setModal("error")
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -29,6 +57,57 @@ export default function AttendanceForm() {
       onSubmit={handleSubmit}
       className="w-full max-w-115 space-y-6 p-8 rounded-3xl bg-cream"
     >
+      {modal && (
+        <div className="fixed inset-0 h-screen z-[1000] grid place-items-center bg-charcoal/40 px-6 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-3xl bg-cream p-8 text-center shadow-2xl">
+            {modal === "success" ? (
+              <>
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-petroleum/10">
+                  <span className="text-2xl text-petroleum">
+                    ✓
+                  </span>
+                </div>
+
+                <h3 className="mt-6 font-title text-4xl text-charcoal">
+                  ¡Respuesta registrada!
+                </h3>
+
+                <p className="mt-4 font-body text-sm leading-relaxed text-charcoal/70">
+                  Muchas gracias por confirmar tu asistencia.
+                  Nos alegra muchísimo poder compartir este
+                  momento con vos.
+                </p>
+              </>
+            ) : (
+              <>
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-earth/10">
+                  <span className="text-2xl text-earth">
+                    !
+                  </span>
+                </div>
+
+                <h3 className="mt-6 font-title text-4xl text-charcoal">
+                  Ocurrió un error
+                </h3>
+
+                <p className="mt-4 font-body text-sm leading-relaxed text-charcoal/70">
+                  No pudimos registrar tu respuesta.
+                  No te preocupes, podés mandarnos un mensaje
+                  para confirmar tu asistencia.
+                </p>
+              </>
+            )}
+
+            <button
+              type="button"
+              onClick={() => setModal(null)}
+              className="mt-8 h-10 w-full rounded-full bg-petroleum px-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-ivory cursor-pointer shadow-md transition-all hover:brightness-110"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      )}
       {/* Nombre */}
       <div className="space-y-2">
         <label
@@ -83,10 +162,9 @@ export default function AttendanceForm() {
               cursor-pointer
               tracking-[0.15em]
               transition-all
-              ${
-                attendance === "yes"
-                  ? "border-charcoal bg-charcoal text-ivory"
-                  : "border-earth/20 bg-ivory/50 text-charcoal hover:border-earth/40"
+              ${attendance === "yes"
+                ? "border-charcoal bg-charcoal text-ivory"
+                : "border-earth/20 bg-ivory/50 text-charcoal hover:border-earth/40"
               }
             `}
           >
@@ -107,10 +185,9 @@ export default function AttendanceForm() {
               cursor-pointer
               tracking-[0.15em]
               transition-all
-              ${
-                attendance === "no"
-                  ? "border-charcoal bg-charcoal text-ivory"
-                  : "border-earth/20 bg-ivory/50 text-charcoal hover:border-earth/40"
+              ${attendance === "no"
+                ? "border-charcoal bg-charcoal text-ivory"
+                : "border-earth/20 bg-ivory/50 text-charcoal hover:border-earth/40"
               }
             `}
           >
@@ -242,7 +319,7 @@ export default function AttendanceForm() {
       {/* Submit */}
       <button
         type="submit"
-        disabled={!attendance}
+        disabled={!attendance || isSubmitting}
         className="
           font-body
           h-10
@@ -256,13 +333,14 @@ export default function AttendanceForm() {
           tracking-[0.2em]
           text-ivory
           shadow-md
+          cursor-pointer
           transition-all
           hover:brightness-110
           disabled:cursor-not-allowed
           disabled:opacity-50
         "
       >
-        Confirmar asistencia
+        {isSubmitting ? "Confirmando..." : "Confirmar asistencia"}
       </button>
     </form>
   );
