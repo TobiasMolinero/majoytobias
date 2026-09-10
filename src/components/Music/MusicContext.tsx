@@ -21,7 +21,7 @@ export const MusicProvider = ({ children }: { children: ReactNode }) => {
 
     const getAudio = () => {
         if (!audioRef.current) {
-            const audio = new Audio("/music/tone-tes.mp3");
+            const audio = new Audio("/music/taylor-swift-enchanted.mp3");
 
             audio.loop = true;
             audio.volume = 0.3;

@@ -3,7 +3,7 @@ import { useState } from "react";
 type Attendance = "yes" | "no" | null;
 
 export default function AttendanceForm() {
-  const [attendance, setAttendance] = useState<Attendance>(null);
+  const [attendance, setAttendance] = useState<Attendance>("yes");
   const [guests, setGuests] = useState("1");
   const [food, setFood] = useState("Ninguno");
   const [comments, setComments] = useState("");
@@ -151,7 +151,7 @@ export default function AttendanceForm() {
       </div>
 
       {/* Asistencia */}
-      <div className="space-y-2">
+      {/* <div className="space-y-2">
         <label className="font-body block text-xs font-medium uppercase tracking-[0.2em] text-petroleum">
           ¿Asistís? <span>*</span>
         </label>
@@ -202,10 +202,10 @@ export default function AttendanceForm() {
             {attendance === "no" && "✓ "}
             No
           </button>
-        </div>
+        </div> */}
 
         {/* Cantidad de personas */}
-        {attendance === "yes" && (
+        {/* {attendance === "yes" && (
           <div className="space-y-2 pt-2">
             <label
               htmlFor="guests"
@@ -245,7 +245,7 @@ export default function AttendanceForm() {
             </select>
           </div>
         )}
-      </div>
+      </div> */}
 
       {/* Requerimientos alimentarios */}
       <div className="space-y-2">

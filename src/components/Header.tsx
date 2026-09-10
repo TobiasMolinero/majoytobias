@@ -41,10 +41,10 @@ export const Header = () => {
                             <li><a href="#lugar" className="lg:hover:underline hover:text-underline-offset-6 transition">DONDE</a></li>
                             <li><a href="#dress-code" className="lg:hover:underline hover:text-underline-offset-6 transition">DRESS CODE</a></li>
                             <li><a href="#regalos" className="lg:hover:underline hover:text-underline-offset-6 transition">REGALOS</a></li>
-                            <li><a href="#playlist" className="lg:hover:underline hover:text-underline-offset-6 transition">PLAYLIST</a></li>
-                            <li><a href="#fotos" className="lg:hover:underline hover:text-underline-offset-6 transition">FOTOS</a></li>
+                            {/* <li><a href="#playlist" className="lg:hover:underline hover:text-underline-offset-6 transition">PLAYLIST</a></li> */}
+                            {/* <li><a href="#fotos" className="lg:hover:underline hover:text-underline-offset-6 transition">FOTOS</a></li> */}
                             <li><a href="#confirmar" className="lg:hover:underline hover:text-underline-offset-6 transition">CONFIRMAR</a></li>
-                            <li><a href="#recuerdos" className="lg:hover:underline hover:text-underline-offset-6 transition">RECUERDOS</a></li>
+                            {/* <li><a href="#recuerdos" className="lg:hover:underline hover:text-underline-offset-6 transition">RECUERDOS</a></li> */}
                         </ul>
                     </nav>
                 </div>

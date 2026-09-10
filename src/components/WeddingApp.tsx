@@ -1,11 +1,11 @@
 import { MusicProvider } from "./Music/MusicContext";
 import { Header } from "./Header";
-// import { InvitationIntro } from "./InvitationIntro";
+import { InvitationIntro } from "./InvitationIntro";
 
 export const WeddingApp = () => {
     return (
         <MusicProvider>
-            {/* <InvitationIntro /> */}
+            <InvitationIntro />
             <Header />
         </MusicProvider>
     );

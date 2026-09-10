@@ -15,10 +15,10 @@ export const DropdowMenu = ({
                 <li><a href="#lugar" className="font-body text-petroleum" onClick={onCloseMenu}>DONDE</a></li>
                 <li><a href="#dress-code" className="font-body text-petroleum" onClick={onCloseMenu}>DRESS CODE</a></li>
                 <li><a href="#regalos" className="font-body text-petroleum" onClick={onCloseMenu}>REGALOS</a></li>
-                <li><a href="#playlist" className="font-body text-petroleum" onClick={onCloseMenu}>PLAYLIST</a></li>
-                <li><a href="#fotos" className="font-body text-petroleum" onClick={onCloseMenu}>FOTOS</a></li>
+                {/* <li><a href="#playlist" className="font-body text-petroleum" onClick={onCloseMenu}>PLAYLIST</a></li> */}
+                {/* <li><a href="#fotos" className="font-body text-petroleum" onClick={onCloseMenu}>FOTOS</a></li> */}
                 <li><a href="#confirmar" className="font-body text-petroleum" onClick={onCloseMenu}>CONFIRMAR</a></li>
-                <li><a href="#recuerdos" className="font-body text-petroleum" onClick={onCloseMenu}>RECUERDOS</a></li>
+                {/* <li><a href="#recuerdos" className="font-body text-petroleum" onClick={onCloseMenu}>RECUERDOS</a></li> */}
             </ul>
         </nav>
     )
