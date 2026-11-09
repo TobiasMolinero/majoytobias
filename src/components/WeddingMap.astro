@@ -1,0 +1,49 @@
+---
+const latitude = -26.822841;
+const longitude = -65.310563;
+
+const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
+
+const embedUrl = `https://www.google.com/maps?q=${latitude},${longitude}&output=embed`;
+---
+
+<section class="location">
+  <div class="map-container">
+    <iframe
+      src={embedUrl}
+      title="Ubicación del lugar de nuestra boda"
+      width="100%"
+      height="100%"
+      style="border: 0;"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</section>
+
+<style>
+  .location {
+    width: 100%;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .map-container iframe {
+    display: block;
+  }
+
+  .directions-button {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 16px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+  }
+</style>
